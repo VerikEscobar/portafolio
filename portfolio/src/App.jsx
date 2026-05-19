@@ -62,22 +62,56 @@ function App() {
 
       <section id="projects" className="section">
         <div className="container">
-          <h2>Proyectos</h2>
+          <h2>Proyectos y experiencia</h2>
+
           <div className="row g-4">
-            <Project
+            <FlipProject
               title="Plataforma de Gestión de Tesis"
-              text="Sistema web para gestionar trabajos finales y tesis universitarias, con roles, avances, revisiones, calendario, reportes y módulo antiplagio."
-              tech="React · Node.js · MySQL · Docker"
+              logo="/logos/default.png"
+              text="Sistema web académico para la gestión de trabajos finales y tesis universitarias. Incluye autenticación, roles, gestión de avances, revisión de documentos, calendario, formatos, aranceles y módulo antiplagio."
+              tech="React · Node.js · Express · MySQL · Docker · Firebase"
             />
-            <Project
+
+            <FlipProject
               title="Inpulso"
-              text="Plataforma administrativa para gestión de usuarios, roles, jerarquías y organización de datos en un entorno político-administrativo."
-              tech="React · Node.js · MySQL"
+              logo="/logos/default.png"
+              text="Plataforma administrativa orientada a la gestión de usuarios, roles, jerarquías y organización de datos, pensada para centralizar información y facilitar el control de perfiles dentro de una estructura organizativa."
+              tech="React · Node.js · Express · MySQL · JWT"
             />
-            <Project
-              title="Sistemas Administrativos"
-              text="Mantenimiento, consultas SQL, integración de funcionalidades y mejoras en sistemas de gestión documental y procesos internos."
-              tech="PHP · Laravel · SQL"
+
+            <FlipProject
+              title="SGR.PY"
+              logo="/logos/default.png"
+              text="Sistema relacionado con la gestión y seguimiento de reclamos, solicitudes y datos administrativos. Participación en ajustes de funcionalidades, integración de datos y mejoras en procesos internos."
+              tech="PHP · JavaScript · MySQL · SQL"
+            />
+
+            <FlipProject
+              title="SysRec"
+              logo="/logos/default.png"
+              text="Sistema administrativo orientado a la gestión de registros, consultas, documentos, solicitudes y procesos internos. Experiencia en mantenimiento, filtros, reportes, validaciones y ajustes funcionales."
+              tech="PHP · Laravel · JavaScript · MySQL · PostgreSQL"
+            />
+
+            <FlipProject
+              title="Página Web Oficial"
+              logo="/logos/default.png"
+              text="Participación en tareas relacionadas con mantenimiento, ajustes de contenido, funcionalidades web y soporte técnico para una página institucional oficial."
+              tech="PHP · HTML · CSS · JavaScript"
+            />
+
+            <FlipProject
+              title="DGREC Sistema de Soporte"
+              logo="/logos/default.png"
+              text="Sistema de soporte utilizado para la gestión, seguimiento y atención de solicitudes internas. Experiencia en revisión de datos, consultas, reportes y mejoras en módulos administrativos."
+              tech="PHP · Laravel · SQL · JavaScript"
+            />
+
+            <FlipProject
+              title="SysCVT Sistema de Valores"
+              logo="/logos/default.png"
+              text="Sistema orientado a la gestión de valores, certificados o procesos administrativos relacionados. Participación en consultas, mantenimiento, validaciones y mejoras de funcionalidades internas."
+              tech="PHP · Laravel · MySQL · JavaScript"
             />
           </div>
         </div>
@@ -118,6 +152,28 @@ function Project({ title, text, tech }) {
         <h4>{title}</h4>
         <p>{text}</p>
         <span>{tech}</span>
+      </div>
+    </div>
+  );
+}
+
+function FlipProject({ title, logo, text, tech }) {
+  return (
+    <div className="col-md-4">
+      <div className="flip-card" tabIndex="0">
+        <div className="flip-card-inner">
+          <div className="flip-card-front">
+            <img src={logo} alt={title} className="project-logo" />
+            <h4>{title}</h4>
+            <p>Click para ver más</p>
+          </div>
+
+          <div className="flip-card-back">
+            <h4>{title}</h4>
+            <p>{text}</p>
+            <span>{tech}</span>
+          </div>
+        </div>
       </div>
     </div>
   );
