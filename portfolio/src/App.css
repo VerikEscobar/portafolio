@@ -53,14 +53,10 @@ nav a:hover {
 }
 
 .hero h1 {
-  font-size: clamp(2.5rem, 6vw, 5rem);
+  /* font-size: clamp(2.5rem, 6vw, 5rem); */
   font-weight: 800;
   max-width: 900px;
   margin: auto;
-}
-
-.hero h1 span {
-  color: var(--red);
 }
 
 .hero-text {
@@ -227,8 +223,17 @@ nav a:hover {
   transform-style: preserve-3d;
 }
 
-.flip-card:hover .flip-card-inner,
-.flip-card:focus .flip-card-inner {
+.flip-card:hover {
+  transform: translateY(-8px);
+}
+
+.flip-card:hover .flip-card-front,
+.flip-card:hover .flip-card-back {
+  border-color: var(--red);
+  box-shadow: 0 0 30px rgba(214, 0, 32, 0.25);
+}
+
+.flip-card.is-flipped .flip-card-inner {
   transform: rotateY(180deg);
 }
 
@@ -297,4 +302,97 @@ nav a:hover {
 .flip-card:hover .project-logo {
   transform: scale(1.08);
   box-shadow: 0 0 25px rgba(214, 0, 32, 0.4);
+}
+
+.flip-card {
+  transition: transform 0.3s ease;
+  scroll-margin-top: 90px;
+}
+
+.flip-card-back small {
+  color: var(--gray);
+  margin-top: 15px;
+  font-size: 0.8rem;
+  opacity: 0.8;
+}
+
+.cursor {
+  color: var(--red);
+  margin-left: 6px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.typing-white {
+  color: white;
+}
+
+.typing-red {
+  color: var(--red);
+}
+
+.profile-img {
+  width: 145px;
+  height: 145px;
+  object-fit: cover;
+  border-radius: 50%;
+  border: 3px solid var(--red);
+  margin-bottom: 25px;
+  box-shadow: 0 0 35px rgba(214, 0, 32, 0.45);
+  animation: profileFloat 3s ease-in-out infinite;
+}
+
+.tag {
+  color: var(--red);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  font-weight: bold;
+}
+
+.typing-red {
+  color: var(--red);
+}
+
+.typing-title {
+  font-size: clamp(2rem, 4.5vw, 3.8rem);
+  font-weight: 800;
+  min-height: 95px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cursor {
+  color: var(--red);
+  margin-left: 6px;
+  animation: blink 0.8s infinite;
+}
+
+@keyframes profileFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes blink {
+  0%, 50% {
+    opacity: 1;
+  }
+
+  51%, 100% {
+    opacity: 0;
+  }
 }
